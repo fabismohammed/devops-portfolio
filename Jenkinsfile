@@ -2,15 +2,15 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "YOUR_DOCKERHUB_USERNAME/devops-portfolio"
-        CONTAINER_NAME = "devops-portfolio"
+        IMAGE_NAME = "YOUR_DOCKERHUB_USERNAME/my-devops-app"
+        CONTAINER_NAME = "my-devops-app"
     }
 
     stages {
 
-        stage('Checkout') {
+        stage('Clone') {
             steps {
-                checkout scm
+                git 'https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPOSITORY.git'
             }
         }
 
@@ -20,7 +20,7 @@ pipeline {
             }
         }
 
-        stage('Login to Docker Hub') {
+        stage('Push to Docker Hub') {
             steps {
                 withCredentials([
                     usernamePassword(
@@ -30,21 +30,14 @@ pipeline {
                     )
                 ]) {
                     sh '''
-                        echo "$DOCKER_PASSWORD" | docker login \
-                            -u "$DOCKER_USERNAME" \
-                            --password-stdin
+                        echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+                        docker push $IMAGE_NAME:latest
                     '''
                 }
             }
         }
 
-        stage('Push Docker Image') {
-            steps {
-                sh 'docker push $IMAGE_NAME:latest'
-            }
-        }
-
-        stage('Deploy Container') {
+        stage('Deploy') {
             steps {
                 sh '''
                     docker stop $CONTAINER_NAME || true
@@ -59,12 +52,6 @@ pipeline {
                 '''
             }
         }
-
-        stage('Verify Deployment') {
-            steps {
-                sh 'docker ps'
-            }
-        }
     }
 
     post {
@@ -73,7 +60,7 @@ pipeline {
         }
 
         failure {
-            echo 'Deployment failed!'
+            echo 'Pipeline failed!'
         }
     }
 }
