@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "YOUR_DOCKERHUB_USERNAME/my-devops-app"
+        IMAGE_NAME = "fabismohammed/my-devops-app"
         CONTAINER_NAME = "my-devops-app"
     }
 
@@ -10,13 +10,13 @@ pipeline {
 
         stage('Clone') {
             steps {
-                git 'https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPOSITORY.git'
+                git 'https://github.com/fabismohammed/devops-portfolio.git'
             }
         }
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t $IMAGE_NAME:latest .'
+                sh 'docker build -t portfolio:v1 .'
             }
         }
 
@@ -24,14 +24,14 @@ pipeline {
             steps {
                 withCredentials([
                     usernamePassword(
-                        credentialsId: 'dockerhub-credentials',
-                        usernameVariable: 'DOCKER_USERNAME',
+                        credentialsId: 'dockerhub_creds',
+                        usernameVariable: 'fabismohammed',
                         passwordVariable: 'DOCKER_PASSWORD'
                     )
                 ]) {
                     sh '''
-                        echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-                        docker push $IMAGE_NAME:latest
+                        echo "$DOCKER_PASSWORD" | docker login -u "fabismohammed" --password-stdin
+                        docker push portfolio:v1
                     '''
                 }
             }
@@ -40,15 +40,12 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh '''
-                    docker stop $CONTAINER_NAME || true
-                    docker rm $CONTAINER_NAME || true
+                    docker stop portfolio-container || true
+                    docker rm portfolio-container || true
 
-                    docker pull $IMAGE_NAME:latest
+                    docker pull portfolio:v1
 
-                    docker run -d \
-                        --name $CONTAINER_NAME \
-                        -p 80:80 \
-                        $IMAGE_NAME:latest
+                    docker run -d --name portfolio-container -p 8010:80 portfolio:v1
                 '''
             }
         }
