@@ -3,20 +3,26 @@ pipeline {
 
     environment {
         IMAGE_NAME = "fabismohammed/my-devops-app"
-        CONTAINER_NAME = "my-devops-app"
+        IMAGE_TAG = "v1"
+        CONTAINER_NAME = "portfolio-container"
     }
 
     stages {
 
         stage('Clone') {
             steps {
-                git 'https://github.com/fabismohammed/devops-portfolio.git'
+                git(
+                    branch: 'main',
+                    url: 'https://github.com/fabismohammed/devops-portfolio.git'
+                )
             }
         }
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t portfolio:v1 .'
+                sh '''
+                    docker build -t ${IMAGE_NAME}:${IMAGE_TAG} .
+                '''
             }
         }
 
@@ -25,13 +31,16 @@ pipeline {
                 withCredentials([
                     usernamePassword(
                         credentialsId: 'dockerhub_creds',
-                        usernameVariable: 'fabismohammed',
+                        usernameVariable: 'DOCKER_USERNAME',
                         passwordVariable: 'DOCKER_PASSWORD'
                     )
                 ]) {
                     sh '''
-                        echo "$DOCKER_PASSWORD" | docker login -u "fabismohammed" --password-stdin
-                        docker push portfolio:v1
+                        echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+
+                        docker push ${IMAGE_NAME}:${IMAGE_TAG}
+
+                        docker logout
                     '''
                 }
             }
@@ -40,12 +49,15 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh '''
-                    docker stop portfolio-container || true
-                    docker rm portfolio-container || true
+                    docker stop ${CONTAINER_NAME} || true
+                    docker rm ${CONTAINER_NAME} || true
 
-                    docker pull portfolio:v1
+                    docker pull ${IMAGE_NAME}:${IMAGE_TAG}
 
-                    docker run -d --name portfolio-container -p 8010:80 portfolio:v1
+                    docker run -d \
+                        --name ${CONTAINER_NAME} \
+                        -p 8010:80 \
+                        ${IMAGE_NAME}:${IMAGE_TAG}
                 '''
             }
         }
