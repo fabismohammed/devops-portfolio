@@ -1,74 +1,578 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>My DevOps Portfolio</title>
-
+    <meta name="description" content="Mohammed Fabis - Junior DevOps and Cloud Engineer Portfolio. Explore my projects, skills in AWS, Linux, Jenkins, Docker and Kubernetes.">
+    <title>Mohammed Fabis M | DevOps Engineer</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header>
-        <h1>Hi</h1>
-        <p>Welcome To My Portfolio</p>
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="navbar container">
+            <a href="#home" class="logo">Fabis<span>.</span></a>
+
+            <button class="menu-toggle" id="menuToggle"
+                    aria-label="Toggle navigation" aria-expanded="false">
+                ☰
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#journey">Journey</a></li>
+                <li><a href="#contact" class="nav-contact">Contact Me</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <section class="hero">
-        <h2>Hello, I'm Mohammed Fabis M 👋</h2>
+    <main>
 
-        <p>
-            I am learning DevOps and building practical projects
-            using Linux, Git, Jenkins, Docker and AWS.
-        </p>
-    </section>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="container hero-grid">
 
-    <section>
-        <h2>My Skills</h2>
+                <div class="hero-content">
+                    <div class="availability">
+                        <span class="status-dot"></span>
+                        Open to opportunities
+                    </div>
 
-        <div class="skills">
-            <div>Linux</div>
-            <div>Git & GitHub</div>
-            <div>Jenkins</div>
-            <div>Docker</div>
-            <div>AWS</div>
-            <div>CI/CD</div>
+                    <p class="eyebrow">HELLO, I'M</p>
+
+                    <h1>Mohammed <span>Fabis</span></h1>
+
+                    <h2>
+                        Aspiring <span id="typingText">DevOps Engineer</span>
+                    </h2>
+
+                    <p class="hero-description">
+                        I build, automate and manage cloud infrastructure
+                        using Linux, AWS, Docker, Jenkins and Kubernetes.
+                        Passionate about automation, deployment and
+                        solving real-world infrastructure problems.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">
+                            Explore My Projects ↗
+                        </a>
+
+                        <a href="resume.pdf" class="btn btn-outline"
+                           target="_blank">
+                            Download Resume ↓
+                        </a>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://github.com/fabismohammed"
+                           target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+
+                        <a href="www.linkedin.com/in/mohammed-fabis-m-b351a731b"
+                           target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+                    </div>
+                </div>
+
+                <!-- Terminal Card -->
+                <div class="terminal-card">
+                    <div class="terminal-header">
+                        <div class="terminal-dots">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <p>fabis@devops:~</p>
+                    </div>
+
+                    <div class="terminal-body">
+                        <p><span class="terminal-green">fabis@devops</span>:~$ whoami</p>
+                        <p class="terminal-output">DevOps Engineer</p>
+
+                        <p><span class="terminal-green">fabis@devops</span>:~$ skills</p>
+                        <p class="terminal-output">
+                            Linux | AWS | Git | Jenkins
+                        </p>
+                        <p class="terminal-output">
+                            Docker | Kubernetes | CI/CD
+                        </p>
+
+                        <p><span class="terminal-green">fabis@devops</span>:~$ current_goal</p>
+                        <p class="terminal-output">Building reliable cloud infrastructure</p>
+
+                        <p><span class="terminal-green">fabis@devops</span>:~$ <span class="cursor">▋</span></p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Technology Strip -->
+        <section class="tech-strip">
+            <div class="container">
+                <p>TECHNOLOGIES I WORK WITH</p>
+                <div class="tech-list">
+                    <span>Linux</span>
+                    <span>AWS</span>
+                    <span>Git</span>
+                    <span>GitHub</span>
+                    <span>Jenkins</span>
+                    <span>Docker</span>
+                    <span>Docker Hub</span>
+                    <span>Kubernetes</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="section" id="about">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">GET TO KNOW ME</p>
+                    <h2>About <span>Me</span></h2>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-text">
+                        <h3>Building my path in Cloud & DevOps Engineering.</h3>
+
+                        <p>
+                            I am an aspiring DevOps and Cloud Engineer with a
+                            background in B.Com Computer Applications.
+                            I am developing practical skills in cloud
+                            infrastructure, Linux administration, containerization
+                            and CI/CD automation.
+                        </p>
+
+                        <p>
+                            I enjoy understanding how applications move from
+                            development to production. My focus is on creating
+                            automated deployment workflows, managing servers
+                            and learning modern cloud technologies through
+                            hands-on projects.
+                        </p>
+
+                        <p>
+                            I believe in continuous learning, practical
+                            problem-solving and building reliable systems.
+                        </p>
+                    </div>
+
+                    <div class="about-info">
+                        <div class="info-card">
+                            <span class="info-icon">☁</span>
+                            <div>
+                                <h4>Cloud Computing</h4>
+                                <p>AWS infrastructure and services</p>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <span class="info-icon">⚙</span>
+                            <div>
+                                <h4>Automation</h4>
+                                <p>CI/CD and deployment pipelines</p>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <span class="info-icon">⌘</span>
+                            <div>
+                                <h4>Linux Administration</h4>
+                                <p>Server management and scripting</p>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <span class="info-icon">◈</span>
+                            <div>
+                                <h4>Containerization</h4>
+                                <p>Docker and Kubernetes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="section section-alt" id="skills">
+            <div class="container">
+
+                <div class="section-heading">
+                    <p class="eyebrow">MY TECHNICAL EXPERTISE</p>
+                    <h2>Technical <span>Skills</span></h2>
+                    <p>Technologies and tools I use in my hands-on learning and projects.</p>
+                </div>
+
+                <div class="skills-grid">
+
+                    <div class="skill-card">
+                        <div class="skill-icon">🐧</div>
+                        <h3>Linux Administration</h3>
+                        <p>Server administration and command-line operations.</p>
+                        <div class="skill-tags">
+                            <span>Ubuntu</span>
+                            <span>Bash</span>
+                            <span>SSH</span>
+                            <span>Users & Permissions</span>
+                            <span>Cron</span>
+                            <span>Systemd</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-icon">☁</div>
+                        <h3>Amazon Web Services</h3>
+                        <p>Cloud infrastructure deployment and management.</p>
+                        <div class="skill-tags">
+                            <span>EC2</span>
+                            <span>S3</span>
+                            <span>IAM</span>
+                            <span>VPC</span>
+                            <span>Security Groups</span>
+                            <span>Elastic IP</span>
+                            <span>CloudWatch</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-icon">⑂</div>
+                        <h3>Version Control</h3>
+                        <p>Source code management and collaboration.</p>
+                        <div class="skill-tags">
+                            <span>Git</span>
+                            <span>GitHub</span>
+                            <span>Branching</span>
+                            <span>Pull Requests</span>
+                            <span>Webhooks</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-icon">⚙</div>
+                        <h3>CI/CD Automation</h3>
+                        <p>Automating application build and deployment.</p>
+                        <div class="skill-tags">
+                            <span>Jenkins</span>
+                            <span>Jenkinsfile</span>
+                            <span>Pipeline</span>
+                            <span>Maven</span>
+                            <span>GitHub Integration</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-icon">◈</div>
+                        <h3>Containerization</h3>
+                        <p>Building and managing containerized applications.</p>
+                        <div class="skill-tags">
+                            <span>Docker</span>
+                            <span>Dockerfile</span>
+                            <span>Docker Hub</span>
+                            <span>Images</span>
+                            <span>Containers</span>
+                            <span>Compose</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-icon">⎈</div>
+                        <h3>Kubernetes</h3>
+                        <p>Container orchestration and application deployment.</p>
+                        <div class="skill-tags">
+                            <span>Pods</span>
+                            <span>Deployments</span>
+                            <span>Services</span>
+                            <span>ConfigMaps</span>
+                            <span>Secrets</span>
+                            <span>PV & PVC</span>
+                            <span>Blue-Green</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="section" id="projects">
+            <div class="container">
+
+                <div class="section-heading">
+                    <p class="eyebrow">WHAT I'VE BUILT</p>
+                    <h2>Featured <span>Projects</span></h2>
+                    <p>Practical projects demonstrating my technical skills.</p>
+                </div>
+
+                <div class="projects-grid">
+
+                    <article class="project-card">
+                        <div class="project-top">
+                            <span class="project-number">01 / CI/CD</span>
+                            <span class="project-symbol">↗</span>
+                        </div>
+
+                        <h3>Automated CI/CD Pipeline</h3>
+
+                        <p>
+                            Developed an automated deployment workflow
+                            connecting GitHub, Jenkins, Docker and AWS EC2.
+                            Code changes trigger pipeline execution through
+                            GitHub Webhooks, followed by container deployment.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>Jenkins</span>
+                            <span>Docker</span>
+                            <span>AWS EC2</span>
+                            <span>GitHub</span>
+                            <span>Linux</span>
+                        </div>
+
+                        <a href="https://github.com/fabismohammed/Portfolio"
+                           target="_blank" rel="noopener noreferrer"
+                           class="project-link">View on GitHub ↗</a>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-top">
+                            <span class="project-number">02 / CLOUD</span>
+                            <span class="project-symbol">↗</span>
+                        </div>
+
+                        <h3>AWS Cloud Infrastructure</h3>
+
+                        <p>
+                            Hands-on cloud infrastructure lab involving
+                            EC2 instances, IAM permissions, VPC networking,
+                            security groups, SSH access and Linux server
+                            configuration.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>AWS</span>
+                            <span>EC2</span>
+                            <span>IAM</span>
+                            <span>VPC</span>
+                            <span>Linux</span>
+                        </div>
+
+                        <a href="https://github.com/fabismohammed"
+                           target="_blank" rel="noopener noreferrer"
+                           class="project-link">Explore GitHub ↗</a>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-top">
+                            <span class="project-number">03 / CONTAINERS</span>
+                            <span class="project-symbol">↗</span>
+                        </div>
+
+                        <h3>Docker Application Deployment</h3>
+
+                        <p>
+                            Practiced building Docker images, managing
+                            containers, publishing images to Docker Hub
+                            and deploying containerized Nginx applications.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>Docker</span>
+                            <span>Docker Hub</span>
+                            <span>Nginx</span>
+                            <span>Linux</span>
+                        </div>
+
+                        <a href="https://github.com/fabismohammed"
+                           target="_blank" rel="noopener noreferrer"
+                           class="project-link">Explore GitHub ↗</a>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-top">
+                            <span class="project-number">04 / ORCHESTRATION</span>
+                            <span class="project-symbol">↗</span>
+                        </div>
+
+                        <h3>Kubernetes Deployment Lab</h3>
+
+                        <p>
+                            Hands-on practice with Kubernetes resources
+                            including Pods, Deployments, Services,
+                            Persistent Volumes, Persistent Volume Claims
+                            and Blue-Green deployment.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>Kubernetes</span>
+                            <span>Docker</span>
+                            <span>YAML</span>
+                            <span>Services</span>
+                        </div>
+
+                        <a href="https://github.com/fabismohammed"
+                           target="_blank" rel="noopener noreferrer"
+                           class="project-link">Explore GitHub ↗</a>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Workflow Section -->
+        <section class="section section-alt">
+            <div class="container">
+
+                <div class="section-heading">
+                    <p class="eyebrow">MY AUTOMATION WORKFLOW</p>
+                    <h2>CI/CD <span>Pipeline</span></h2>
+                    <p>How code moves from development to production in my portfolio project.</p>
+                </div>
+
+                <div class="pipeline">
+
+                    <div class="pipeline-step">
+                        <div class="pipeline-icon">⑂</div>
+                        <h4>GitHub</h4>
+                        <p>Code Push</p>
+                    </div>
+
+                    <div class="pipeline-arrow">→</div>
+
+                    <div class="pipeline-step">
+                        <div class="pipeline-icon">⚙</div>
+                        <h4>Jenkins</h4>
+                        <p>Build Pipeline</p>
+                    </div>
+
+                    <div class="pipeline-arrow">→</div>
+
+                    <div class="pipeline-step">
+                        <div class="pipeline-icon">◈</div>
+                        <h4>Docker</h4>
+                        <p>Image Build</p>
+                    </div>
+
+                    <div class="pipeline-arrow">→</div>
+
+                    <div class="pipeline-step">
+                        <div class="pipeline-icon">☁</div>
+                        <h4>Docker Hub</h4>
+                        <p>Image Push</p>
+                    </div>
+
+                    <div class="pipeline-arrow">→</div>
+
+                    <div class="pipeline-step">
+                        <div class="pipeline-icon">▣</div>
+                        <h4>AWS EC2</h4>
+                        <p>Deployment</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Journey Section -->
+        <section class="section" id="journey">
+            <div class="container">
+
+                <div class="section-heading">
+                    <p class="eyebrow">MY BACKGROUND</p>
+                    <h2>Learning <span>Journey</span></h2>
+                </div>
+
+                <div class="timeline">
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span>2023 – 2026</span>
+                            <h3>B.Com Computer Applications</h3>
+                            <p>EMEA College of Arts and Science, Kondotty</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span>Cloud & DevOps Learning</span>
+                            <h3>Linux and AWS Fundamentals</h3>
+                            <p>Learning Linux administration, AWS EC2, IAM, S3, VPC and networking.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span>Hands-on Practice</span>
+                            <h3>Git, Jenkins and Docker</h3>
+                            <p>Building CI/CD pipelines, managing containers and automating deployments.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span>Currently Learning</span>
+                            <h3>Kubernetes and Cloud Engineering</h3>
+                            <p>Practicing container orchestration and modern cloud deployment techniques.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section contact-section" id="contact">
+            <div class="container">
+
+                <div class="contact-box">
+                    <p class="eyebrow">LET'S CONNECT</p>
+
+                    <h2>Let's Build Something <span>Reliable.</span></h2>
+
+                    <p>
+                        I'm interested in Junior DevOps, Cloud Engineer
+                        and System Administrator opportunities.
+                        Feel free to connect with me.
+                    </p>
+
+                    <a href="mailto:YOUR_EMAIL@gmail.com"
+                       class="btn btn-primary">
+                        Get In Touch ↗
+                    </a>
+
+                    <div class="contact-links">
+                        <a href="https://github.com/fabismohammed"
+                           target="_blank" rel="noopener noreferrer">GitHub</a>
+
+                        <a href="https://www.linkedin.com/"
+                           target="_blank" rel="noopener noreferrer">LinkedIn</a>
+
+                        <a href="mailto:YOUR_EMAIL@gmail.com">Email</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <a href="#home" class="logo">Fabis<span>.</span></a>
+            <p>Designed & Built by Mohammed Fabis</p>
+            <p>© <span id="year"></span> All Rights Reserved.</p>
         </div>
-    </section>
-
-    <section>
-        <h2>My Project</h2>
-
-        <div class="project">
-            <h3>Automated CI/CD Pipeline</h3>
-
-            <p>
-                Built a CI/CD pipeline using GitHub, Jenkins,
-                Docker, Docker Hub and AWS EC2.
-            </p>
-
-            <p>
-                The pipeline automatically builds and deploys
-                this website whenever new code is pushed to GitHub.
-            </p>
-        </div>
-    </section>
-
-    <section>
-        <h2>DevOps Workflow</h2>
-
-        <p class="workflow">
-            GitHub → Jenkins → Docker → Docker Hub → AWS EC2
-        </p>
-    </section>
-
-    <footer>
-        <p>© 2026 Mohammed Fabis | DevOps Portfolio</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
-
 </html>
